@@ -187,16 +187,28 @@ graphLongData <- function(dataset,titleName,yVal,fileNameIn)
   return(g)
 }
 
-#' Title
+#' Generate Images
 #'
-#' @return
+#' Generate images after processing from table.to.graph and graph.to.positions
+#'
+#' @param positions the positions generated from graph.to.positions
+#' @param aeList aeList generated from table.to.graph
+#' @param allG allG generated from table.to.graph
+#' @param group1Name name of group 1
+#' @param group2Name name of group 2
+#' @param group1Size size of group 1
+#' @param group2Size size of group 2
+#' @param results_dir directory to write results to
+#'
+# @return
 #' @export
 #'
 #' @examples
-generate.images <- function(positions, aeList, allG, group1Name, group2Name, group1Size, group2Size){
+generate.images <- function(positions, aeList, allG, group1Name, group2Name, group1Size, group2Size, results_dir){
   group1 = aeList[aeList$groupName == group1Name,]
   group2 = aeList[aeList$groupName == group2Name,]
 
+  # todo: allow selecting the file name and h/w
   png(filename = file.path(results_dir, "ae_allData_weights.png"),width=3840,height=3840)
   #par(mar=c(0,0,0,0))
   par(mfrow=c(2,1))    # set the plotting area into a 1*2 array

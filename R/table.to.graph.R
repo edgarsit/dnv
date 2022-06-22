@@ -1,13 +1,16 @@
-#' Title
+#' Table to Graph
 #'
-#' @param table
-#' @param subject
-#' @param cycle
+#' Convert a table into an aelist and graph
 #'
-#' @return
+#' @param table the table
+#' @param subject the subject column name
+#' @param cycle the cycle column name
+#'
+#' @return aelist, the graph object
 #' @export
 #'
 #' @examples
+#' table.to.graph(table, "subject", "cycle")
 #'
 #' @importFrom data.table :=
 table.to.graph <- function(table, subject, cycle) {
