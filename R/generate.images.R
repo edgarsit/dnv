@@ -204,12 +204,12 @@ graphLongData <- function(dataset,titleName,yVal,fileNameIn)
 #' @export
 #'
 #' @examples
-generate.images <- function(positions, aeList, allG, group1Name, group2Name, group1Size, group2Size, results_dir){
+generate.images <- function(positions, aeList, allG, group1Name, group2Name, group1Size, group2Size, results_dir, ae_allData_weights="ae_allData_weights.png", degreeDataLong="degreeDataLong.png", betweenessDataLong="betweenessDataLong.png", closenessDataLong="closenessDataLong.png"){
   group1 = aeList[aeList$groupName == group1Name,]
   group2 = aeList[aeList$groupName == group2Name,]
 
   # todo: allow selecting the file name and h/w
-  png(filename = file.path(results_dir, "ae_allData_weights.png"),width=3840,height=3840)
+  png(filename = file.path(results_dir, ae_allData_weights),width=3840,height=3840)
   #par(mar=c(0,0,0,0))
   par(mfrow=c(2,1))    # set the plotting area into a 1*2 array
   #graphData(rxA,1,1,"Group = A")
@@ -330,15 +330,15 @@ generate.images <- function(positions, aeList, allG, group1Name, group2Name, gro
 
   #temp$strength = normData(temp$strength)
   #stG <- graphLongData(temp,"Strength",temp$strength,paste0(cwd,"\\..\\..\\results\\es5103\\weighted\\strengthDataLong.png"))
-  degree <- graphLongData(temp,"Degree",temp$degree,file.path(results_dir,"degreeDataLong.png"))
+  degree <- graphLongData(temp,"Degree",temp$degree,file.path(results_dir,degreeDataLong))
 
   #temp = allGData[allGData$names %in% topBetweenNames,]
   #temp$betweenness = normData(temp$betweenness)
-  btG <- graphLongData(temp,"Betweeness",temp$betweenness,file.path(results_dir,"betweenessDataLong.png"))
+  btG <- graphLongData(temp,"Betweeness",temp$betweenness,file.path(results_dir,betweenessDataLong))
 
   # temp = allGData[allGData$names %in% topClosenessNames,]
   # temp$closeness = normData(temp$closeness)
-  clG <- graphLongData(temp,"Closeness",temp$closeness,file.path(results_dir,"closenessDataLong.png"))
+  clG <- graphLongData(temp,"Closeness",temp$closeness,file.path(results_dir,closenessDataLong))
 
   png(filename = file.path(results_dir,"top5_avg_degree_over_time.png") ,width=1920,height=1080)
   figure <- ggpubr::ggarrange(degree,btG,clG,nrow=1,common.legend = TRUE,legend = "right")

@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate.images.R
 \name{generate.images}
 \alias{generate.images}
-\title{Title}
+\title{Generate Images}
 \usage{
 generate.images(
   positions,
@@ -11,9 +11,27 @@ generate.images(
   group1Name,
   group2Name,
   group1Size,
-  group2Size
+  group2Size,
+  results_dir
 )
 }
+\arguments{
+\item{positions}{the positions generated from graph.to.positions}
+
+\item{aeList}{aeList generated from table.to.graph}
+
+\item{allG}{allG generated from table.to.graph}
+
+\item{group1Name}{name of group 1}
+
+\item{group2Name}{name of group 2}
+
+\item{group1Size}{size of group 1}
+
+\item{group2Size}{size of group 2}
+
+\item{results_dir}{directory to write results to}
+}
 \description{
-Title
+Generate images after processing from table.to.graph and graph.to.positions
 }

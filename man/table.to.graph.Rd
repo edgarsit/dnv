@@ -2,13 +2,24 @@
 % Please edit documentation in R/table.to.graph.R
 \name{table.to.graph}
 \alias{table.to.graph}
-\title{Title}
+\title{Table to Graph}
 \usage{
 table.to.graph(table, subject, cycle)
 }
 \arguments{
-\item{cycle}{}
+\item{table}{the table}
+
+\item{subject}{the subject column name}
+
+\item{cycle}{the cycle column name}
+}
+\value{
+aelist, the graph object
 }
 \description{
-Title
+Convert a table into an aelist and graph
+}
+\examples{
+table.to.graph(table, "subject", "cycle")
+
 }

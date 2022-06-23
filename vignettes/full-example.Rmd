@@ -1,0 +1,33 @@
+---
+title: "full-example"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{full-example}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, include = FALSE}
+library(devtools)
+load_all()
+```
+
+```{r, eval = FALSE}
+library(test.package)
+```
+
+```{r, eval = FALSE}
+data("AE_relationships")
+aeList <- table.to.graph(AE_relationships, "Subject", "cycle")[[1]]
+allG <- table.to.graph(AE_relationships, "Subject", "cycle")[[2]]
+positions = graph.to.positions(allG, outputWidth, outputHeight)
+generate.images(positions, aeList, allG, "Neuro", "mixed", 129, 45, "./results")
+
+```
