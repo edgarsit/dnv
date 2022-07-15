@@ -20,7 +20,8 @@ load_all()
 ```
 
 ```{r, eval = FALSE}
-library(test.package)
+library(remotes)
+install_github("edgarsit/test.package")
 ```
 
 ```{r, eval = FALSE}

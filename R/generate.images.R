@@ -208,7 +208,6 @@ generate.images <- function(positions, aeList, allG, group1Name, group2Name, gro
   group1 = aeList[aeList$groupName == group1Name,]
   group2 = aeList[aeList$groupName == group2Name,]
 
-  # todo: allow selecting the file name and h/w
   png(filename = file.path(results_dir, ae_allData_weights),width=3840,height=3840)
   #par(mar=c(0,0,0,0))
   par(mfrow=c(2,1))    # set the plotting area into a 1*2 array
@@ -275,9 +274,6 @@ generate.images <- function(positions, aeList, allG, group1Name, group2Name, gro
     plotNetworkData(gData)
     dev.off()
 
-    #
-    # options(width=10000)
-    # printData(rxAData,bData,paste0(cwd,"\\..\\..\\results\\es5103\\weighted\\graphStats_weights.xlsx"),as.character(i))
     rxAData$cycle = i
     bData$cycle = i
     rxAData$group = group1Name
@@ -308,6 +304,7 @@ generate.images <- function(positions, aeList, allG, group1Name, group2Name, gro
 
   groups=unique(temp$group)
 
+  # TODO
   totalCycles = 6-1+1
 
   allCycles = as.data.frame(t(rbind(names=rep(topDegreeNames,totalCycles),cycle=as.numeric(rep(1:6,length(topDegreeNames))))),stringsAsFactors = FALSE)
@@ -340,7 +337,7 @@ generate.images <- function(positions, aeList, allG, group1Name, group2Name, gro
   # temp$closeness = normData(temp$closeness)
   clG <- graphLongData(temp,"Closeness",temp$closeness,file.path(results_dir,closenessDataLong))
 
-  png(filename = file.path(results_dir,"top5_avg_degree_over_time.png") ,width=1920,height=1080)
+  png(filename = file.path(results_dir,"top5_avg_degree_over_time.png"), width=1920, height=1080)
   figure <- ggpubr::ggarrange(degree,btG,clG,nrow=1,common.legend = TRUE,legend = "right")
   ggpubr::annotate_figure(figure,bottom = grid::textGrob("Cycle",x = 0.42,y=0.97, gp = grid::gpar(cex = 2.3)))
   dev.off()
