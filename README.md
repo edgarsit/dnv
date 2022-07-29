@@ -15,8 +15,8 @@ Load the package from Github with
 
 ```r
 library(remotes)
-install_github("edgarsit/test.package")
-library(test.package)
+install_github("edgarsit/dnv")
+library(dnv)
 ```
 
 or from the downloaded directory with
@@ -24,7 +24,7 @@ or from the downloaded directory with
 ```r
 library(remotes)
 install_local("path/to/directory")
-library(test.package)
+library(dnv)
 ```
 
 If you have outdated libraries installed, R might prompt you to update them. You can choose to update them at this time or update them later.

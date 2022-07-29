@@ -21,7 +21,8 @@ load_all()
 
 ```{r, eval = FALSE}
 library(remotes)
-install_github("edgarsit/test.package")
+install_github("edgarsit/dnv")
+library(dnv)
 ```
 
 ```{r, eval = FALSE}

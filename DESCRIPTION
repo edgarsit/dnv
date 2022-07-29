@@ -1,5 +1,5 @@
-Package: test.package
-Title: What the Package Does (One Line, Title Case)
+Package: dnv
+Title: Dynamic Network Visualization
 Version: 0.0.0.9000
 Authors@R:
     person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
@@ -21,10 +21,10 @@ Imports:
     grid,
     gridExtra,
     ggpubr
-Suggests: 
+Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-Depends: 
+Depends:
     R (>= 2.10)
 LazyData: true
