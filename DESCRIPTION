@@ -20,7 +20,8 @@ Imports:
     RColorBrewer,
     grid,
     gridExtra,
-    ggpubr
+    ggpubr,
+    gtools
 Suggests:
     knitr,
     rmarkdown
