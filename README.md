@@ -37,7 +37,7 @@ Generate the inital graph by calling `table.to.graph`. Then adjust positions wit
 data("AE_relationships")
 aeList <- table.to.graph(AE_relationships, "Subject", "cycle")[[1]]
 allG <- table.to.graph(AE_relationships, "Subject", "cycle")[[2]]
-positions = graph.to.positions(allG, outputWidth, outputHeight)
+positions = graph.to.positions(allG, 1920, 1080)
 ```
 
 Adjust the postions here

@@ -25,11 +25,14 @@ install_github("edgarsit/dnv")
 library(dnv)
 ```
 
-```{r, eval = FALSE}
+```{r}
 data("AE_relationships")
 aeList <- table.to.graph(AE_relationships, "Subject", "cycle")[[1]]
 allG <- table.to.graph(AE_relationships, "Subject", "cycle")[[2]]
-positions = graph.to.positions(allG, outputWidth, outputHeight)
+```
+
+```{r, eval = FALSE}
+positions = graph.to.positions(allG, 1920, 1080)
 generate.images(positions, aeList, allG, "Neuro", "mixed", 129, 45, "./results")
 
 ```
