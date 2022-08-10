@@ -16,6 +16,7 @@ Load the package from Github with
 ```r
 library(remotes)
 install_github("edgarsit/dnv")
+
 library(dnv)
 ```
 
@@ -43,5 +44,6 @@ positions = graph.to.positions(allG, 1920, 1080)
 Adjust the postions here
 
 ```r
+dir.create("./results", recursive = TRUE, showWarnings = FALSE)
 generate.images(positions, aeList, allG, "Neuro", "mixed", 129, 45, "./results")
 ```
